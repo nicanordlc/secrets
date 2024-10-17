@@ -1,0 +1,39 @@
+Commands:
+
+    help:
+        Show this help ¯\_(ツ)_/¯
+
+    init:
+        This runs the rules `bootstrap-key` and `decrypt`
+
+    bootstrap-key
+        Import the `gpg` key provided
+
+    encrypt
+        Encrypt and then commit every file changed in the `dot` directory
+        to the `encrypted` directory
+
+    decrypt
+        Decrypt files in the `encrypted` directory
+
+    post-decrypt
+        Change the mod for the `.ssh/id_rsa` key and initializes the repo for
+        the `dots` directory (to keep track of those files)
+
+    show
+        Show in plain text any *.gpg in the git-stash for the `dots`
+        directory. You can pass any *.gpg file on the variable `FILES=`
+        as argument
+
+    diff
+        This check the `dots` files and see if they have any difference
+        between the `encrypted` ones.
+
+    clean
+        Remove the `dots` directory
+
+    update
+        Runs `clean` and `decrypt`
+
+    destroy
+        Delete secret and public gpg keys, also all the files on this directory
