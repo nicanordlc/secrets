@@ -49,6 +49,13 @@ show:
 diff:
 	@./src/bin/diff.sh
 
+.PHONY: status
+status:
+	@echo "dots"
+	@echo "===="
+	@echo
+	@cd dots && git status
+
 .PHONY: clean
 clean:
 	@rm -rf $(DECRYPTED_PATH)
