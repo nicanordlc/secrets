@@ -46,3 +46,5 @@ make <command>
 - show
 - diff
 - clean
+- status
+- checkout
