@@ -56,6 +56,13 @@ status:
 	@echo
 	@cd dots && git status
 
+.PHONY: checkout
+checkout:
+	@echo "dots"
+	@echo "===="
+	@echo
+	@cd dots && git checkout .
+
 .PHONY: clean
 clean:
 	@rm -rf $(DECRYPTED_PATH)
