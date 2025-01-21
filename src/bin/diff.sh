@@ -18,7 +18,11 @@ trap '{ rm -f /tmp/*$TMP_SUFFIX ; }' SIGINT SIGTERM EXIT
 
 dots_modified="$(cd dots && ../src/bin/staged-files.sh)"
 
-echo -e "Diffing modified files...\n"
+if [ -n "$dots_modified" ]; then
+    echo -e "Diffing modified files...\n"
+else
+    echo -e "Nothing to diff here..."
+fi
 
 for dot_modified in $dots_modified; do
     gpg_file="$(cat ENV_ENCRYPTED_PATH)/${dot_modified}.gpg"
