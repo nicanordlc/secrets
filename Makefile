@@ -35,9 +35,6 @@ $(DECRYPTED_PATH)/%: $(ENCRYPTED_PATH)/%.gpg
 	@echo "[Decrypting] $<"
 	@./src/bin/decrypt.sh $< > $@
 
-.PHONY: update
-update: clean decrypt
-
 # Git management
 ################
 
@@ -62,10 +59,6 @@ checkout:
 	@echo "===="
 	@echo
 	@cd dots && git checkout .
-
-.PHONY: clean
-clean:
-	@rm -rf $(DECRYPTED_PATH)
 
 ################
 #              #
