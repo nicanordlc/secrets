@@ -1,3 +1,5 @@
 #!/bin/bash
 
-git status --porcelain | cut -c4-
+git status --porcelain |
+    grep -v "^ D" |
+    cut -c4-

@@ -1,6 +1,6 @@
 # vim: ts=8:sw=8
 
-ENCRYPTED_PATH	:= src/encrypted
+ENCRYPTED_PATH	:= $(shell cat ENV_ENCRYPTED_PATH)
 DECRYPTED_PATH	:= $(shell cat ENV_DECRYPTED_PATH)
 
 FILES		:= ""
