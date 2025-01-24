@@ -48,8 +48,8 @@ diff:
 
 .PHONY: status
 status:
-	@echo "dots"
-	@echo "===="
+	@echo $(DECRYPTED_PATH)
+	@echo $(DECRYPTED_PATH) | sed 's;.;=;g'
 	@echo
 	@cd dots && git status
 
