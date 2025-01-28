@@ -10,7 +10,8 @@ GPG_FILES_OUT	:= $(patsubst $(ENCRYPTED_PATH)/%.gpg,$(DECRYPTED_PATH)/%,$(GPG_FI
 
 .PHONY: help
 help:
-	@cat ./src/help
+	@echo "Commands:"
+	@cat ./Makefile | grep '.PHONY:[[:space:]]' | sed 's;^.*[[:space:]];- ;'
 
 #########
 #       #
