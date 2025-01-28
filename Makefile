@@ -25,8 +25,8 @@ init: create-dots bootstrap-key decrypt
 # Crypto
 ########
 
-.PHONY: encrypt
-encrypt:
+.PHONY: add
+add:
 	@./src/bin/encrypt.sh
 
 .PHONY: decrypt
