@@ -5,7 +5,7 @@ cd "$(cat ENV_DECRYPTED_PATH)"
 git add .
 
 for git_file in $(../src/bin/staged-files.sh); do
-    gpg -eu "${GPG_ID}" -r "${GPG_ID}" "$git_file"
+    gpg --always-trust -eu "${GPG_ID}" -r "${GPG_ID}" "$git_file"
 
     target_file_path="../src/encrypted/${git_file}.gpg"
 
@@ -17,3 +17,7 @@ for git_file in $(../src/bin/staged-files.sh); do
 done
 
 ../src/bin/commit.sh
+
+cd -
+
+git add .
