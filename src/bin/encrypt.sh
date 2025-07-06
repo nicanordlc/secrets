@@ -18,6 +18,6 @@ done
 
 ../src/bin/commit.sh
 
-cd -
+cd - &>/dev/null
 
 git add .
