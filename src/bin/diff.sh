@@ -16,7 +16,7 @@ TMP_SUFFIX=".clean"
 
 trap '{ rm -f /tmp/*$TMP_SUFFIX ; }' SIGINT SIGTERM EXIT
 
-dots_modified="$(cd dots && ../src/bin/staged-files.sh)"
+dots_modified="$(cd dots && ../src/bin/all-files.sh)"
 
 if [ -n "$dots_modified" ]; then
     echo -e "Diffing modified files...\n"
